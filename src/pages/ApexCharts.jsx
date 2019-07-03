@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import ReactDOM from 'react-dom';
 
-class MixedChart extends React.Component {
+export default class MixedChart extends React.Component {
   constructor(props) {
     super(props);
 
@@ -16,12 +15,12 @@ class MixedChart extends React.Component {
           width: [1, 1, 4]
         },
         title: {
-          text: 'XYZ - Stock Analysis (2009 - 2016)',
+          text: 'Dafam Group Top Performance  (Rank 1 - 5)',
           align: 'left',
           offsetX: 110
         },
         xaxis: {
-          categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
+          categories: ['Rank 1', 'Rank 2', 'Rank 3', 'Rank 4', 'Rank 5']
         },
         yaxis: [
           {
@@ -38,7 +37,7 @@ class MixedChart extends React.Component {
               }
             },
             title: {
-              text: 'Income (thousand crores)',
+              text: 'Bookings (unit / pack)',
               style: {
                 color: '#008FFB'
               }
@@ -49,7 +48,7 @@ class MixedChart extends React.Component {
           },
 
           {
-            seriesName: 'Income',
+            seriesName: 'Checkin',
             opposite: true,
             axisTicks: {
               show: true
@@ -64,7 +63,7 @@ class MixedChart extends React.Component {
               }
             },
             title: {
-              text: 'Operating Cashflow (thousand crores)',
+              text: 'Checkin (room / night)',
               style: {
                 color: '#00E396'
               }
@@ -86,7 +85,7 @@ class MixedChart extends React.Component {
               }
             },
             title: {
-              text: 'Revenue (thousand crores)',
+              text: 'Revenue (Million)',
               style: {
                 color: '#FEB019'
               }
@@ -108,19 +107,19 @@ class MixedChart extends React.Component {
       },
       series: [
         {
-          name: 'Income',
+          name: 'Bookings',
           type: 'column',
-          data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6]
+          data: [459, 432, 407, 359, 250]
         },
         {
-          name: 'Cashflow',
+          name: 'Room/Night',
           type: 'column',
-          data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 8.5]
+          data: [372, 333, 277, 215, 79]
         },
         {
           name: 'Revenue',
           type: 'line',
-          data: [20, 29, 37, 36, 44, 45, 50, 58]
+          data: [327.36, 293.04, 243.76, 189.2, 69.52]
         }
       ]
     };
@@ -133,14 +132,12 @@ class MixedChart extends React.Component {
           options={this.state.options}
           series={this.state.series}
           type="line"
-          height="350"
+          height="240"
         />
       </div>
     );
   }
 }
 
-const domContainer = document.querySelector('#app');
-ReactDOM.render(React.createElement(MixedChart), domContainer);
-
-export default MixedChart;
+// const domContainer = document.querySelector('#app');
+// ReactDOM.render(React.createElement(MixedChart), domContainer);
